@@ -11,7 +11,7 @@ This plugin get mock location in Android api <= 22 AND api > 22
 ## Installation
 
 ```bash
-cordova plugin add cordova-plugin-mockchecker
+cordova plugin add cordova-plugin-applaudmockchecker
 ```
 
 ## Usage in javascript
