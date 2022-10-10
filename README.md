@@ -39,5 +39,6 @@ Contains mock status :
 ### properties
 
 - isMock : (boolean) true if device mock, false if no mock behavior detected.
-- messages : (string) this properties exists if isMock properties values is true. 
-
+- title : (string) returns title if device using mock locartion or developer options are enabled.
+- messages : (string) this properties exists if isMock properties values is true.
+- osVersion : (int) return platform OS version.
