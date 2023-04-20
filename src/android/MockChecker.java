@@ -18,6 +18,7 @@ import java.util.List;
 public class MockChecker extends CordovaPlugin {
 
     private JSONObject objGPS = new JSONObject();
+    private final String TAG = "MOCKLOCATION";
     private bosowa.hris.cordova.MockChecker mContext;
 
     @Override
@@ -43,16 +44,17 @@ public class MockChecker extends CordovaPlugin {
                     objGPS.put("messages",
                             "You have enabled Developer options on your device. You are unable to use this feature until Developer options are disabled.");
 
-                } else {
-                    objGPS.put("isMock", isMockPermissionGranted(mContext.cordova.getActivity()));
-                    if (objGPS.getBoolean("isMock")) {
-                        objGPS.put("title", "GPS spoofing detected");
-                        objGPS.put("messages",
-                                "You have one or more GPS spoofing apps installed on your device. You are unable to use this feature until those apps are uninstalled.");
-                    }
-                }
+                } 
+                // else {
+                //     objGPS.put("isMock", isMockPermissionGranted(mContext.cordova.getActivity()));
+                //     if (objGPS.getBoolean("isMock")) {
+                //         objGPS.put("title", "GPS spoofing detected");
+                //         objGPS.put("messages",
+                //                 "You have one or more GPS spoofing apps installed on your device. You are unable to use this feature until those apps are uninstalled.");
+                //     }
+                // }
             }
-            Log.i("Location", "isMock: " + objGPS.get("isMock"));
+            Log.i(TAG,"Location", "isMock: " + objGPS.get("isMock"));
             callbackContext.success(objGPS);
             return true;
         } else {
